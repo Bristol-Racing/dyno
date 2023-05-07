@@ -1,8 +1,8 @@
-#include "sensor/loadCell.hpp"
-#include "sensor/hallEffect.hpp"
-#include "sensor/current.hpp"
-#include "sensor/voltage.hpp"
-#include "sensor/sensorManager.hpp"
+#include "sensors/loadCell.hpp"
+#include "sensors/hallEffect.hpp"
+#include "sensors/current.hpp"
+#include "sensors/voltage.hpp"
+#include "sensors/sensorManager.hpp"
 
 // HX711 circuit wiring
 const int LOADCELL_DOUT_PIN = 3;

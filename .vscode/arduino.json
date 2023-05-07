@@ -2,6 +2,6 @@
     "board": "arduino:avr:uno",
     "programmer": "arduino:avrispmkii",
     "port": "/dev/ttyACM0",
-    "sketch": "dyno/dyno.ino",
+    "sketch": "dyno.ino",
     "output": "build"
 }

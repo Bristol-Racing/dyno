@@ -1,6 +1,6 @@
 #include "sensors/loadCell.hpp"
 #include "sensors/hallEffect.hpp"
-#include "sensors/current.hpp"
+#include "sensors/ADC_Current.hpp"
 #include "sensors/voltage.hpp"
 #include "sensors/sensorManager.hpp"
 
@@ -22,7 +22,7 @@ long reading = 0;
 int sensorCount = 4;
 Sensor::LoadCell scale(LOADCELL_DOUT_PIN, LOADCELL_SCK_PIN, arm_length);
 Sensor::HallEffect hallEffect;
-Sensor::CurrentSensor currentSensor(CURRENT_VIN);
+Sensor::CurrentSensor currentSensor;
 Sensor::VoltageSensor voltageSensor(VOLTAGE_VIN, 1000000.0, 220000.0);
 
 Sensor::SensorManager manager(sensorCount, time_per_reading * readings);
@@ -33,6 +33,7 @@ void setup() {
     scale.setTickRate(time_per_reading);
     scale.setReadRate(1000);
 
+    currentSensor.setup();
     currentSensor.setTickRate(time_per_reading);
     currentSensor.setReadRate(1000);
 

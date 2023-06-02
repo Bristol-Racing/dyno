@@ -29,9 +29,17 @@ Sensor::SensorManager manager(sensorCount, time_per_reading * readings);
 
 void setup() {
     Serial.begin(57600);
+
     scale.setTickRate(time_per_reading);
+    scale.setReadRate(1000);
+
     currentSensor.setTickRate(time_per_reading);
+    currentSensor.setReadRate(1000);
+
     hallEffect.setTickRate(1);
+    hallEffect.setReadRate(1000);
+
+    voltageSensor.setReadRate(1000);
 
     manager.addSensor(&scale);
     manager.addSensor(&hallEffect);
